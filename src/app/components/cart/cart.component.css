@@ -1,0 +1,11 @@
+#container {
+    padding-left: 32px;
+}
+    #container > div > img {
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
+    }
+    #container > div > span {
+        vertical-align: middle;
+    }
