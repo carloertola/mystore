@@ -1,0 +1,11 @@
+<h2>Product Details</h2>
+
+<div id="container">
+    <img [src]="products[id].url"/><br/>
+    <span><b>Item Name</b>: {{ products[id].name }}</span><br/>
+    <span><b>Item Price</b>: {{ products[id].price }}</span><br/>
+    <span><b>Item Description</b>: {{ products[id].description }}</span><br/><br/>
+    <app-cart-form [product]="products[id]"></app-cart-form>
+</div>
+<a routerLink="/">Back to Products List</a>
+
