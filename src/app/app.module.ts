@@ -6,12 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { CartFormComponent } from './components/cart-form/cart-form.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ProductListComponent
+    ProductListComponent,
+    CartFormComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
