@@ -1,8 +1,9 @@
 <h2>Products List</h2>
 <div id="container">
     <div class="product-item" *ngFor="let product of products">
-        <img [src]="product.url"/><br/>
+        <a [routerLink]="['/products', product.id]"><img [src]="product.url"/></a><br/>
         <span>{{ product.name }}</span>
         <span>{{ product.price | currency }}</span><br/>
+        <app-cart-form [product]="product"></app-cart-form>
     </div>
 </div>

@@ -3,23 +3,25 @@ h2 {
 }
 #container {
     display: flex;
-    gap: 25px;
+    gap: 40px;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 0 32px;
+    margin-bottom: 4em;
 }
     .product-item {
         display: inline-block;
     }
-        .product-item > img {
+        .product-item > a > img {
             width: 300px;
             height: 300px;
             object-fit: cover;
         }
         .product-item > span {
             display: inline-block;
-            margin: 4px 0 16px 0;
+            margin-top: 4px;
+            margin-bottom: 0.25em;
             font-weight: bold;
         }
         .product-item > span:nth-child(4) {
