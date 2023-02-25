@@ -29,4 +29,12 @@ export class CartService {
     this.items = [];
     return this.items;
   }
+
+  addTotal() {
+    let total: number = 0;
+    this.items.forEach((item) => {
+      total += item.price * item.quantity;
+    });
+    return total;
+  }
 }
