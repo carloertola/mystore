@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-checkout',
@@ -11,7 +12,10 @@ export class CheckoutComponent {
   cardNumber: string = "";
   address: string = "";
 
+  constructor(private cartService: CartService) { }
+
   onSubmit() {
-    window.alert("Your order was successful " + this.client + ' and will be shipped to you soon')
+    window.alert("Your order was successful " + this.client + ' and will be shipped to you soon');
+    this.cartService.clearCart();
   }
 }
