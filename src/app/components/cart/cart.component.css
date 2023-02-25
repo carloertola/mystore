@@ -1,11 +1,23 @@
 #container {
-    padding-left: 32px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 32px;
 }
-    #container > div > img {
-        width: 64px;
-        height: 64px;
-        object-fit: cover;
+
+    #container > div > div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2em;
     }
-    #container > div > span {
-        vertical-align: middle;
-    }
+
+        #container > div > div > img {
+            width: 32px;
+            height: 32px;
+            object-fit: cover;
+        }
+
+        #container > div > div > span {
+            display: inline-block;
+            width: 128px;
+            margin-left: 2em;
+        }
