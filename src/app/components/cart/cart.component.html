@@ -6,6 +6,7 @@
             <span>{{ item.name }}</span>
             <span>{{ item.price | currency }}</span>
             <span>Qty {{ item.quantity }}</span><br/>
+            <button (click)="removeItem(item)">Remove Item</button>
         </div><br/>
         <p><strong>Total</strong>: {{ total | currency}}</p>
     </div>

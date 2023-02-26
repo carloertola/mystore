@@ -9,8 +9,13 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent {
   items: Product[] = this.cartService.getItems();
-  total: number = this.cartService.addTotal();
+  total: number = this.cartService.total;
 
   constructor(private cartService: CartService) { }
 
+  removeItem(item: Product) {
+    this.cartService.removeFromCart(item);
+    this.total = this.cartService.total;
+    window.alert("Item Successfully Removed!");
+  }
 }
