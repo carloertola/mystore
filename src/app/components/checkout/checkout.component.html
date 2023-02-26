@@ -1,12 +1,48 @@
 <h3>Checkout</h3>
 <form #form="ngForm" (ngSubmit)="onSubmit()">
-    <label>Name: </label>
-    <input type="text" required minlength="8" [(ngModel)]="client" #clientName="ngModel"/><br/>
+    <label>Full Name: </label>
+    <input type="text" name="fullName" placeholder="Enter your full name" 
+    required minlength="8" [(ngModel)]="fullName" #name="ngModel"/>
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div class="error" *ngIf="name.errors?.['required']">
+            Please provide your full name!
+        </div>
+        <div class="error" *ngIf="name.errors?.['minlength']">
+            Your name must have a minimum of 8 characters!
+        </div>
+    </div>
     <label>Email: </label>
-    <input type="email" name="email" required [(ngModel)]="email"/><br/>
-    <label>Card Number: </label>
-    <input type="text" minlength="12" [(ngModel)]="cardNumber"/><br/>
-    <label>Shipping Address: </label>
-    <input type="text" name="address" [(ngModel)]="address"/><br/>
-    <input type="submit" name="submit" value="Ship Order" [disabled]="form.invalid"/>
+    <input type="email" name="emailAddress" placeholder="Enter your email address"
+    required [(ngModel)]="emailAddress" #emailAddr="ngModel" [email]="validateEmail"/>
+    <div *ngIf="emailAddr.invalid && (emailAddr.dirty || emailAddr.touched)">
+        <div class="error" *ngIf="emailAddr.errors?.['required']">
+            Please provide your email address!
+        </div>
+        <div class="error" *ngIf="emailAddr.errors?.['email']">
+            Please enter a valid email address!
+        </div>
+    </div>
+    <label>Address: </label>
+    <input type="text" name="address" placeholder="Enter the shipping address"
+    required minlength="6" [(ngModel)]="physicalAddress" #physicalAddr="ngModel" [email]="validateEmail"/>
+    <div *ngIf="physicalAddr.invalid && (physicalAddr.dirty || physicalAddr.touched)">
+        <div class="error" *ngIf="physicalAddr.errors?.['required']">
+            Please provide an address!
+        </div>
+        <div class="error" *ngIf="physicalAddr.errors?.['minlength']">
+            Your address must have a minimum of 6 characters!
+        </div>
+    </div>
+    <label> Card Number: </label>
+    <input type="text" name="cardNumber" place="Enter your card number"
+    required minlength="16" maxlength="16" [(ngModel)]="cardNumber" #card="ngModel"/>
+    <div *ngIf="card.invalid && (card.dirty || card.touched)">
+        <div class="error" *ngIf="card.errors?.['required']">
+            Please provide your card details
+        </div>
+        <div class="error" *ngIf="card.errors?.['minlength'] || card.errors?.['maxlength']">
+            You need to input 16 digits
+        </div>
+    </div>
+    <input type="submit" name="checkout" value="Ship Order" [disabled]="form.invalid"/>
 </form>

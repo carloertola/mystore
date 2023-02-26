@@ -1,4 +1,15 @@
 form > input {
     display: block;
+    margin: 4px 0 8px 0;
     width: 256px;
+}
+.warning {
+    color: darkred;
+}
+input:disabled {
+    background-color: lightcoral;
+}
+.error {
+    font-size: 0.75em;
+    color: darkred;
 }
