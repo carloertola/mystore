@@ -18,7 +18,7 @@ export class CartService {
       this.items.push(product);
       window.alert("Product successfully added to Cart!")
     } else {
-      this.total = product.quantity * product.price;
+      this.total += product.quantity * product.price;
       existingProduct.quantity += product.quantity;
       window.alert("We've added more of this item!")
     }
