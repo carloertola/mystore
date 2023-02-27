@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CartService } from 'src/app/services/cart.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-checkout',
@@ -9,15 +10,16 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CheckoutComponent {
 
-  fullName: string = "";
+  firstName: string = "";
+  lastName: string = "";
   emailAddress: string = "";
-  validateEmail: boolean = true;
-  physicalAddress: string = "";
+  shippingAddress = "";
   cardNumber: string = "";
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private router: Router) { }
 
   onSubmit(): void {
-    window.alert("Thanks for placing an order with us " + this.fullName);
+    window.alert("Thanks for buying from us!");
+    this.router.navigate(['/orderconfirmed']);
   }
 }
