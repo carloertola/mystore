@@ -1,0 +1,14 @@
+<div id="container">
+    <h2>Order Confirmed</h2>
+    <p>You ordered the following items</p>
+    <div>
+        <ul *ngFor="let item of items">
+            <li>Name: {{ item.name }}</li>
+            <li>Quantity: {{ item.quantity }}</li>
+            <li>Unit Price: {{ item.price }}</li>
+        </ul>
+    </div>
+    <p>You paid a total of {{ total | currency }}</p>
+    <p>It was a pleasure doing business with you</p>
+    <button (click)="resetEverything()">Start a New Order</button>
+</div>
