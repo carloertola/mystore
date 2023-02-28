@@ -1,0 +1,19 @@
+a > img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+span {
+    display: inline-block;
+    margin-top: 4px;
+    margin-bottom: 0.25em;
+    font-weight: bold;
+}
+span:nth-child(4) {
+    float: right;
+    font-weight: normal;
+}
+form {
+    display: flex;
+    justify-content: space-between;
+}
