@@ -10,21 +10,6 @@ h2 {
     padding: 0 32px;
     margin-bottom: 4em;
 }
-    .product-item {
-        display: inline-block;
-    }
-        .product-item > a > img {
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-        }
-        .product-item > span {
-            display: inline-block;
-            margin-top: 4px;
-            margin-bottom: 0.25em;
-            font-weight: bold;
-        }
-        .product-item > span:nth-child(4) {
-            float: right;
-            font-weight: normal;
-        }
+app-product-item {
+    display: inline-block;
+}
