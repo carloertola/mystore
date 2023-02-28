@@ -3,7 +3,7 @@
     <label>First Name: </label>
     <input type="text" name="firstName" placeholder="Enter your first name"
     required minlength="4" pattern="[A-Za-z]*"
-    [(ngModel)]="firstName" #fName="ngModel"/>
+    [(ngModel)]="firstName" #fName="ngModel" (ngModelChange)="firstName"/>
     <!-- Validation for First Name input -->
     <div *ngIf="fName.invalid && (fName.dirty || fName.touched)">
         <div class="error" *ngIf="fName.errors?.['required']">
@@ -19,7 +19,7 @@
 
     <label>Last Name: </label>
     <input type="text" name="lastName" placeholder="Enter your last name"
-    required minlength="4" pattern="[A-Za-z]*"
+    required minlength="4" pattern="[A-Za-z]*" (ngModelChange)="lastName"
     [(ngModel)]="lastName" #lName="ngModel"/>
     <!-- Validation for Last Name input -->
     <div *ngIf="lName.invalid && (lName.dirty || lName.touched)">
@@ -37,7 +37,7 @@
     <label>Email Address: </label>
     <input type="email" name="email" placeholder="Enter your email"
     required pattern="^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$"
-    [(ngModel)]="emailAddress" #email="ngModel"/>
+    [(ngModel)]="emailAddress" #email="ngModel" (ngModelChange)="emailAddress"/>
     <!-- Validation for email input -->
     <div *ngIf="email.invalid && (email.dirty || email.touched)">
         <div class="error" *ngIf="email.errors?.['required']">
@@ -51,7 +51,7 @@
     <label>Shipping Address: </label>
     <input type="text" name="shippingAddress" placeholder="Enter your shipping address"
     required minlength="4"
-    [(ngModel)]="shippingAddress" #address="ngModel"/>
+    [(ngModel)]="shippingAddress" #address="ngModel" (ngModelChange)="shippingAddress"/>
     <!-- Validation for shipping address input -->
     <div *ngIf="address.invalid && (address.dirty || address.touched)">
         <div class="error" *ngIf="address.errors?.['required']">
@@ -65,7 +65,7 @@
     <label>Card Number: </label>
     <input type="text" name="cardNumber" placeholder="Enter your card number"
     required minlength="16" maxlength="16" pattern="[0-9]*"
-    [(ngModel)]="cardNumber" #card="ngModel"/>
+    [(ngModel)]="cardNumber" #card="ngModel" (ngModelChange)="cardNumber"/>
     <!-- Validation of card number input -->
     <div *ngIf="card.invalid && (card.dirty || card.touched)">
         <div class="error" *ngIf="card.errors?.['required']">
